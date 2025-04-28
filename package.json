@@ -1,0 +1,25 @@
+{
+  "name": "rc-anywhere",
+  "version": "1.0.0",
+  "main": "lib/server.js",
+  "bin": {
+    "rc-anywhere": "bin/koa-server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/koa-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "一个简单的Koa静态服务器，支持代理配置",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "koa": "^2.16.1",
+    "koa-connect": "^2.1.0",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^13.0.1",
+    "koa-static": "^5.0.0"
+  }
+}
