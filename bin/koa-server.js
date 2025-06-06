@@ -51,7 +51,7 @@ program
       console.log('代理配置文件已存在');
       return;
     }
-    fs.copyFileSync(path.join(__dirname, '../proxyConfig.template.js'), targetPath);
+    fs.copyFileSync(path.join(__dirname, '../proxyConfig.template.js'), TARGET_PATH);
     console.log('代理配置文件已初始化');
   });
 
