@@ -1,6 +1,6 @@
 {
   "name": "rc-anywhere",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "lib/server.js",
   "bin": {
     "rc-anywhere": "bin/koa-server.js"
