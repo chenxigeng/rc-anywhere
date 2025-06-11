@@ -4,9 +4,10 @@ const program = require('commander');
 const pkg = require('../package.json');
 const path = require('path');
 const fs = require('fs');
+const chalk = require('chalk');
 const server = require('../lib/server');
 
-const TARGET_PATH = path.join(process.cwd(), 'proxyConfig.js');
+const TARGET_PATH = path.join(process.cwd(), 'proxyConfig.cjs');
 
 // 创建serve子命令
 program
