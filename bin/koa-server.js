@@ -17,6 +17,9 @@ program
   .option('-p, --port <port>', '指定端口号', 3000)
   .option('-d, --directory <path>', '指定静态文件目录', process.cwd())
   .option('-c, --config <path>', '指定代理配置文件路径')
+  .option('-o, --open', '自动打开浏览器')
+  .option('--cors', '允许跨域请求')
+  .option('--no-gzip', '禁用 Gzip 压缩')
   .action((options) => {
     // 检查并加载代理配置
     let proxyConfig = {};
@@ -39,7 +42,10 @@ program
     server.start({
       port: options.port,
       directory: options.directory,
-      proxyConfig
+      proxyConfig,
+      open: options.open,
+      cors: options.cors,
+      gzip: options.gzip
     });
   });
 
@@ -57,4 +63,4 @@ program
   });
 
 program.version(pkg.version);
-program.parse(process.argv); 
+program.parse(process.argv);
