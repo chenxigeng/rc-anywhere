@@ -62,5 +62,21 @@ program
     console.log('代理配置文件已初始化');
   });
 
+// 创建mock-server子命令
+program
+  .command('mock-server')
+  .description('启动 Mock API 服务器 (兼容 json-server)')
+  .option('-p, --port <port>', '指定端口号', 3000)
+  .option('-H, --host <host>', '指定 host', 'localhost')
+  .option('-f, --file <file>', '指定数据文件', 'db.json')
+  .option('-w, --watch', '监听文件变化')
+  .option('-d, --delay <ms>', '增加响应延迟 (毫秒)')
+  .option('--read-only', '只允许 GET 请求')
+  .option('--no-cors', '禁用 CORS')
+  .option('-q, --quiet', '控制台静默模式')
+  .action((options) => {
+    require('../lib/mock-server').start(options);
+  });
+
 program.version(pkg.version);
 program.parse(process.argv);
